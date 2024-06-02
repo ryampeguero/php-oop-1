@@ -35,9 +35,8 @@ class Movie
         $this->cast[] = $actor;
     }
 
-    public function setGenre($genre_instance)
+    public function setGenre(Genre $genre_instance)
     {
-        if (strlen($genre_instance) > 2)
             $this->genre = $genre_instance;
     }
     //Metodi Get
@@ -54,5 +53,15 @@ class Movie
     public function getPoster()
     {
         return $this->poster;
+    }
+
+    public function getCast()
+    {
+        return $this->cast;
+    }
+
+    public function getGenre()
+    {
+        return $this->genre;
     }
 }
