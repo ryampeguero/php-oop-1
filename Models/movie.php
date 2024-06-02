@@ -15,12 +15,14 @@ class Movie
     //Metodi Set
     public function setTitle(string $title)
     {
-        $this->title = $title;
+        if (strlen($title) > 2)
+            $this->title = $title;
     }
 
     public function setDescr(string $description)
     {
-        $this->description = $description;
+        if (strlen($description) > 10)
+            $this->description = $description;
     }
 
     public function setPoster(string $poster)
@@ -28,13 +30,15 @@ class Movie
         $this->poster = $poster;
     }
 
-    public function setCast(string $actor)
+    public function setCast(Actor $actor)
     {
         $this->cast[] = $actor;
     }
 
-    public function setGenre($genre_instance){
-        $this->genre = $genre_instance;
+    public function setGenre($genre_instance)
+    {
+        if (strlen($genre_instance) > 2)
+            $this->genre = $genre_instance;
     }
     //Metodi Get
     public function getTitle()
